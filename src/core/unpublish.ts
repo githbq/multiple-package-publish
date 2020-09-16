@@ -38,7 +38,7 @@ const tasks = [
             const { version } = options
             const root = path.resolve(cwd, options.dist || 'dist')
             const packageJSONPaths = await globby(
-                ['**/package.json', '!**/node_modules/**/*', '!**/{templates,temp}?(s)/**/*'],
+                ['**/package.json', '!**/node_modules/**/*', '!**/{template,temp}?(s)/**/*'],
                 { cwd: root, dot: false }
             )
             const packagePaths = packageJSONPaths.map(n => path.dirname(n))

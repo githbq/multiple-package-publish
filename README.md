@@ -4,7 +4,7 @@
 
 1. 多包发布，替代不好用的 lerna
 2. 对当前多包目录进行统一发布或者取消发布
-3. 需要搭配 `multipl-package-build` 当前工程
+3. 需要搭配 `multipl-package-build` 处理当前工程
 2. warning:开发完成待验证
 
 ## 安装
