@@ -1,8 +1,8 @@
 /**
  * entry
  */
-(async () => {
-    console.log('hello typescript')
-})()
 
-export const add = (a, b) => a + b
+import publish from './core/publish'
+import unpublish from './core/publish'
+
+export { publish, unpublish }

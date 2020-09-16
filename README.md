@@ -3,7 +3,8 @@
 ## 功能介绍
 
 1. 多包发布，替代不好用的 lerna
-2. 敬请期待，正在开发中...
+2. 对当前多包目录进行统一发布或者取消发布
+2. warning:开发完成待验证
 
 ## 安装
 
@@ -15,15 +16,23 @@ npm install multiple-package-publish
 
 ## 使用   
 
-``` 
+``` ts
+import { publish,unpublish } from 'multiple-package-publish'
+
+async function(){
+    await publish({tag?:'beta||rc',target?:'packageRelativeDir'}?)
+    await unpublish({version:'1.0.0'})
+}
+
 ```
 
 ## cli模式
 
-```
-
+``` shell
 npm i -g multiple-package-publish
-
-multiple-package-publish start
+multiple-package-publish   publish|unpublish
+// or 
+mpp publish |unpublish
 ```
+
  

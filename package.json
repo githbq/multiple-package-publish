@@ -1,6 +1,6 @@
 {
     "name": "multiple-package-publish",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "multiple-package-publish",
     "main": "build/index.js",
     "bin": {
@@ -18,8 +18,9 @@
         "lint": "tslint --fix '{src,__tests__}/**/*.ts'"
     },
     "dependencies": {
+        "chalk": "^4.1.0",
         "fs-extra": "^9.0.1",
-        "spawn-helper": "^1.0.0",
+        "globby": "^11.0.1",
         "terminal-input": "^1.0.0",
         "tslib": "^2.0.1",
         "yargs": "^16.0.0-beta.3"
