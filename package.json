@@ -1,0 +1,43 @@
+{
+    "name": "module-cli-lib",
+    "version": "1.0.0",
+    "description": "module-cli-lib",
+    "main": "build/index.js",
+    "bin": {
+        "module-cli-lib": "./build/bin"
+    },
+    "scripts": {
+        "start:build": "npm run tsc && node build",
+        "start": "node run",
+        "test": "jest --forceExit --detectOpenHandles --colors",
+        "clear": "rimraf build",
+        "tsc": "npm run clear && tsc",
+        "tsc:w": "npm run tsc -- -w",
+        "p": "npm run tsc && npm publish",
+        "lint": "tslint --fix '{src,__tests__}/**/*.ts'"
+    },
+    "dependencies": {
+        "tslib": "^2.0.1",
+        "yargs": "^15.4.1"
+    },
+    "devDependencies": {
+        "@types/node": "^12.12.53",
+        "@types/yargs": "^15.0.5",
+        "@types/jest": "^26.0.13",
+        "jest": "^26.4.2",
+        "rimraf": "^2.7.1",
+        "ts-jest": "^26.3.0",
+        "ts-node": "^8.10.2",
+        "tslint": "^6.1.2",
+        "typescript": "^3.9.7"
+    },
+    "keywords": [
+        "module-cli-lib"
+    ],
+    "author": "hubiqing",
+    "repository": "https://github.com/githbq/hbq-module-cli-lib-boilerplate.git",
+    "engines": {
+        "node": ">=8"
+    },
+    "license": "MIT"
+}
