@@ -67,10 +67,10 @@ const tasks = [
                 ['**/package.json', '!**/node_modules/**/*', '!**/{template,temp}?(s)/**/*'],
                 { cwd: root, dot: false }
             )
-            const packagePaths = packageJSONPaths.map(n => path.dirname(n))
             const { tag } = options
-            const promises = packagePaths.map(async packagePath => {
-                const packageJson = await fs.readJSON(path.join(packagePath, 'package.json'))
+            const promises = packageJSONPaths.map(async packageJSONPath => {
+                const packagePath = path.dirname(packageJSONPath)
+                const packageJson = await fs.readJSON(packageJSONPath)
                 const packageVersion = packageJson.version
                 const packageName = packageJson.name
                 if (!tag && tags.some(item => packageVersion.indexOf(item) !== -1)) {
