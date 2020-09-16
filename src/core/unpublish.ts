@@ -41,7 +41,6 @@ const tasks = [
                 ['**/package.json', '!**/node_modules/**/*', '!**/{template,temp}?(s)/**/*'],
                 { cwd: root, dot: false }
             )
-            const packagePaths = packageJSONPaths.map(n => path.dirname(n))
             const promises = packageJSONPaths.map(async (packageJSONPath, index) => {
                 const packagePath = path.dirname(packageJSONPath)
                 const packageJSON = await fs.readJSON(packageJSONPath)
