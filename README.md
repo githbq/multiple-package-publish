@@ -1,15 +1,15 @@
-# module-cli-lib
+# multiple-package-publish
 
 ## 功能介绍
 
-1. module-cli-lib
+1. 多包发布，替代不好用的 lerna
 
 ## 安装
 
 ``` 
-yarn add module-cli-lib 
+yarn add multiple-package-publish 
 //or 
-npm install module-cli-lib 
+npm install multiple-package-publish 
 ```
 
 ## 使用   
@@ -21,8 +21,8 @@ npm install module-cli-lib
 
 ```
 
-npm i -g module-cli-lib
+npm i -g multiple-package-publish
 
-module-cli-lib start
+multiple-package-publish start
 ```
  

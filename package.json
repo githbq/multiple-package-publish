@@ -1,10 +1,10 @@
 {
-    "name": "module-cli-lib",
+    "name": "multiple-package-publish",
     "version": "1.0.0",
-    "description": "module-cli-lib",
+    "description": "multiple-package-publish",
     "main": "build/index.js",
     "bin": {
-        "module-cli-lib": "./build/bin"
+        "multiple-package-publish": "./build/bin"
     },
     "scripts": {
         "start:build": "npm run tsc && node build",
@@ -17,13 +17,16 @@
         "lint": "tslint --fix '{src,__tests__}/**/*.ts'"
     },
     "dependencies": {
+        "fs-extra": "^9.0.1",
+        "spawn-helper": "^1.0.0",
+        "terminal-input": "^1.0.0",
         "tslib": "^2.0.1",
-        "yargs": "^15.4.1"
+        "yargs": "^16.0.0-beta.3"
     },
     "devDependencies": {
+        "@types/jest": "^26.0.13",
         "@types/node": "^12.12.53",
         "@types/yargs": "^15.0.5",
-        "@types/jest": "^26.0.13",
         "jest": "^26.4.2",
         "rimraf": "^2.7.1",
         "ts-jest": "^26.3.0",
@@ -31,13 +34,9 @@
         "tslint": "^6.1.2",
         "typescript": "^3.9.7"
     },
-    "keywords": [
-        "module-cli-lib"
-    ],
+    "keywords": ["multiple-package-publish"],
     "author": "hubiqing",
-    "repository": "https://github.com/githbq/hbq-module-cli-lib-boilerplate.git",
-    "engines": {
-        "node": ">=8"
-    },
+    "repository": "https://github.com/githbq/multiple-package-publish.git",
+    "engines": {"node": ">=8"},
     "license": "MIT"
 }
