@@ -22,7 +22,6 @@ const tasks = [
             let result = true
             const { version } = options
             if (!version) return
-            // 批量下架确认
             const confirmUnpublish = await confirm(`确认要批量下架 ${version} 版本`, 'n')
             if (!confirmUnpublish) {
                 result = false
@@ -45,10 +44,8 @@ const tasks = [
             const packagePaths = packageJSONPaths.map(n => path.dirname(n))
             const promises = packagePaths.map(async (packagePath, index) => {
                 let packageJSONPath = path.join(packagePath, 'package.json')
-
-                const packageJSON = await fs.readJSON(packageJSONPath) // eslint-disable-line
+                const packageJSON = await fs.readJSON(packageJSONPath)
                 const unpublishVersion = `${packageJSON.name}@${version}`
-
                 console.log(`下架 ${unpublishVersion}`)
                 await exec(`npm unpublish ${unpublishVersion}`)
             })
