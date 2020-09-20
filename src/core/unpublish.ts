@@ -60,7 +60,8 @@ const run = async (options?) => {
     for (let task of tasks) {
         console.time(task.describe)
         try {
-            await task.action(options || {})
+            const result = await task.action(options || {})
+            if (!result) break
         } catch (e) {
             console.error(task.describe, e)
         }

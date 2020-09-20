@@ -56,6 +56,7 @@ const tasks = [
             } else if (options.isForce) {
                 result = await confirm('确认要强制发布？', 'n')
             }
+            return result
         }
     },
     {
@@ -98,7 +99,8 @@ const run = async (options?) => {
     for (let task of tasks) {
         console.time(task.describe)
         try {
-            await task.action(options || {})
+            const result = await task.action(options || {})
+            if (result === false) break
         } catch (e) {
             console.error(task.describe, e)
         }
