@@ -48,7 +48,7 @@ const tasks = [
                 console.log(`下架 ${unpublishVersion}`)
                 await exec(`npm unpublish ${unpublishVersion}`, { cwd: packagePath })
             })
-            await promises
+            await Promise.all(promises)
             return result
         }
     }
