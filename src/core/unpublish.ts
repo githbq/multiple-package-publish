@@ -61,7 +61,7 @@ const run = async (options?) => {
         console.time(task.describe)
         try {
             const result = await task.action(options || {})
-            if (!result) break
+            if (result === false) break
         } catch (e) {
             console.error(task.describe, e)
         }
