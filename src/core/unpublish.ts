@@ -44,7 +44,7 @@ const tasks = [
             const promises = packageJSONPaths.map(async (packageJSONPath, index) => {
                 const packagePath = path.dirname(packageJSONPath)
                 const packageJSON = await fs.readJSON(packageJSONPath)
-                const unpublishVersion = `${packageJSON.name}@${version}`
+                const unpublishVersion = `${packageJSON.name}  ${version}`
                 console.log(`下架 ${unpublishVersion}`)
                 await exec(`npm unpublish ${unpublishVersion}`, { cwd: packagePath })
             })

@@ -74,14 +74,14 @@ const tasks = [
                 const packageVersion = packageJson.version
                 const packageName = packageJson.name
                 if (!tag && tags.some(item => packageVersion.indexOf(item) !== -1)) {
-                    console.log(chalk.red(`✗ ${packageName}@${packageVersion} 需要加 --tag 发布`))
+                    console.log(chalk.red(`✗ ${packageName}  ${packageVersion} 需要加 --tag 发布`))
                     result = false
                 } else if (tag && packageVersion.indexOf(tag) === -1) {
-                    console.log(chalk.red(`✗ ${packageName}@${packageVersion} 版本号与tag参数 ${tag} 不匹配`))
+                    console.log(chalk.red(`✗ ${packageName}  ${packageVersion} 版本号与tag参数 ${tag} 不匹配`))
                     result = false
                 }
                 if (result) {
-                    console.log(`发布 ${packagePath}@${packageName}`)
+                    console.log(`发布 ${packagePath}  ${packageName}`)
                     await exec('npm publish', { cwd: packagePath })
                 }
             })
