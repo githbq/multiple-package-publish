@@ -11,7 +11,7 @@ export default async (command, options?, silent?) => {
     let messages = []
     for (let command of commands) {
         try {
-            const stdio = await exec(command, options)
+            const stdio = await exec(command, { stdio: 'inherit', ...options })
             if (!silent && stdio.stderr && !stdio.stdout) {
                 return Promise.reject(new Error(stdio.stderr))
             }
