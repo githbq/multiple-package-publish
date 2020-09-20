@@ -1,11 +1,11 @@
 {
     "name": "multiple-package-publish",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "multiple-package-publish",
     "main": "build/index.js",
     "bin": {
-        "multiple-package-publish": "./build/bin",
-        "mpp": "./build/bin"
+        "multiple-package-publish": "./build/bin/index.js",
+        "mpp": "./build/bin/index.js"
     },
     "scripts": {
         "start:build": "npm run tsc && node build",
