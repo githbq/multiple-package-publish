@@ -60,7 +60,7 @@ const tasks = [
     },
     {
         describe: '发布流程',
-        async action(options, distDir = 'dist') {
+        async action(options) {
             let result = true
             const root = path.resolve(options.dist || 'dist')
             const packageJSONPaths = await globby(
@@ -85,7 +85,7 @@ const tasks = [
                     await exec('npm publish', { cwd: packagePath })
                 }
             })
-            await promises
+            await Promise.all(promises)
             return result
         }
     }
