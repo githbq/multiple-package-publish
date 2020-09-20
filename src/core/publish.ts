@@ -1,5 +1,5 @@
 import * as  path from 'path'
-import fs from 'fs-extra'
+import * as fs from 'fs-extra'
 import * as chalk from 'chalk'
 import * as globby from 'globby'
 import exec from '../utils/exec'
